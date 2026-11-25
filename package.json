@@ -1,0 +1,12 @@
+{
+  "name": "focus-tasks",
+  "version": "1.0.0",
+  "description": "Ứng dụng quản lý task cá nhân với CRUD, tìm kiếm, bộ lọc và thống kê.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

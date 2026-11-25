@@ -2,6 +2,9 @@
 
 Focus Tasks là ứng dụng TODO app giúp quản lý công việc cá nhân trong ngày. Giao diện tiếng Việt, responsive cho desktop và mobile.
 
+Link repository: https://github.com/hanguyenthanhhhh/BackEnd
+Link Pages: https://hanguyenthanhhhh.github.io/BackEnd/
+
 ## Chức năng
 
 - Hiển thị task hôm nay, tìm kiếm và lọc theo trạng thái.
@@ -56,6 +59,14 @@ Yêu cầu Node.js 18 trở lên.
 ```bash
 npm start
 ```
+
+## Demo GitHub Pages
+
+Phiên bản online của ứng dụng:
+
+[https://hanguyenthanhhhh.github.io/BackEnd/](https://hanguyenthanhhhh.github.io/BackEnd/)
+
+GitHub Pages chỉ chạy phần giao diện tĩnh. Dữ liệu task được lưu bằng `localStorage` trên trình duyệt.
 
 Mở trình duyệt tại [http://localhost:8090].
 

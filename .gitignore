@@ -1,4 +1,6 @@
 node_modules/
 *.docx
 ~$*
+Bai1.html
+HelloWorld.js
 .DS_Store

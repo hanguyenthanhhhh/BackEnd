@@ -3,43 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Focus Tasks - quản lý công việc cá nhân đơn giản và hiệu quả.">
-  <title>Focus Tasks — Quản lý công việc cá nhân</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="refresh" content="0; url=todo-app/index.html">
+  <title>Focus Tasks</title>
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <div class="brand"><span class="brand-mark">✓</span><span>focus<span class="brand-accent">.</span></span></div>
-      <nav class="nav" aria-label="Điều hướng chính">
-        <button class="nav-item active" data-view="tasks"><span>▦</span> Công việc <span class="nav-count" id="navCount">0</span></button>
-        <button class="nav-item" data-view="stats"><span>◒</span> Thống kê</button>
-      </nav>
-      <div class="sidebar-bottom">
-        <div class="mini-tip"><span>✦</span><strong>Mẹo nhỏ</strong><p>Chia nhỏ công việc để ngày hôm nay nhẹ nhàng hơn.</p></div>
-        <div class="profile"><div class="avatar">N</div><div><strong>Nguyễn Thanh Hà</strong><small>Không gian cá nhân</small></div><span>•••</span></div>
-      </div>
-    </aside>
-
-    <main class="main-content">
-      <header class="topbar"><div class="mobile-brand">focus<span>.</span></div><div class="date-label" id="headerDate"></div><button class="icon-button" id="themeButton" aria-label="Đổi giao diện">☼</button></header>
-
-      <section id="tasksView" class="view active-view">
-        <div class="page-heading"><div><p class="eyebrow">DASHBOARD CỦA BẠN</p><h1>Xin chào, Hà <span>👋</span></h1><p class="subheading">Hãy hoàn thành từng bước nhỏ để có một ngày hiệu quả.</p></div><button class="primary-button" id="addTaskButton"><span>＋</span> Thêm công việc</button></div>
-        <div class="overview-grid"><article class="metric-card"><div class="metric-icon blue">☑</div><div><span>Hôm nay</span><strong id="todayMetric">0 / 0</strong><small id="todayCaption">Chưa có công việc</small></div><div class="progress-ring" id="ringToday">0%</div></article><article class="metric-card"><div class="metric-icon orange">◷</div><div><span>Đang làm</span><strong id="doingMetric">0</strong><small>Công việc cần chú ý</small></div><div class="metric-spark">↗</div></article><article class="metric-card"><div class="metric-icon green">♧</div><div><span>Hoàn thành tuần này</span><strong id="weekMetric">0</strong><small id="weekCaption">Tiếp tục phát huy!</small></div><div class="metric-spark green-text">↗</div></article></div>
-        <div class="toolbar"><div class="section-title"><h2>Công việc hôm nay</h2><span class="pill" id="taskCount">0 công việc</span></div><div class="toolbar-actions"><label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Tìm công việc..."></label><select id="filterSelect" aria-label="Lọc công việc"><option value="all">Tất cả</option><option value="todo">Chưa làm</option><option value="doing">Đang làm</option><option value="done">Đã xong</option></select></div></div>
-        <div id="taskList" class="task-list"></div>
-      </section>
-
-      <section id="statsView" class="view">
-        <div class="page-heading"><div><p class="eyebrow">TỔNG QUAN HIỆU SUẤT</p><h1>Thống kê của bạn <span>📊</span></h1><p class="subheading">Theo dõi tiến độ để cải thiện thói quen mỗi ngày.</p></div><button class="secondary-button" id="seedButton">↻ Nạp dữ liệu mẫu</button></div>
-        <div class="stats-grid"><article class="chart-card chart-wide"><div class="card-heading"><div><h3>Tiến độ hoàn thành</h3><p>7 ngày gần nhất</p></div><span class="trend">↗ +18.4%</span></div><div class="bar-chart" id="barChart"></div><div class="chart-days"><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span></div></article><article class="chart-card"><div class="card-heading"><div><h3>Phân bổ công việc</h3><p>Theo danh mục</p></div></div><div class="donut-wrap"><div class="donut" id="donut"><strong id="donutTotal">0</strong><small>tổng task</small></div><div class="legend" id="legend"></div></div></article></div>
-        <div class="insight-card"><span class="insight-icon">✦</span><div><strong>Gợi ý cho bạn</strong><p id="insightText">Bạn đang làm rất tốt. Hãy bắt đầu thêm công việc để xem thống kê.</p></div></div>
-      </section>
-    </main>
-  </div>
-
-  <dialog id="taskDialog"><form method="dialog" id="taskForm"><div class="modal-heading"><div><p class="eyebrow">QUẢN LÝ CÔNG VIỆC</p><h2 id="dialogTitle">Thêm công việc mới</h2></div><button type="button" class="close-button" id="closeDialog">×</button></div><input type="hidden" id="taskId"><label>Tên công việc<input id="taskTitle" required maxlength="80" placeholder="Ví dụ: Hoàn thành báo cáo tuần"></label><label>Mô tả <span class="optional">(không bắt buộc)</span><textarea id="taskDescription" rows="3" maxlength="180" placeholder="Thêm một chút chi tiết..."></textarea></label><div class="form-row"><label>Danh mục<select id="taskCategory"><option value="Cá nhân">Cá nhân</option><option value="Học tập">Học tập</option><option value="Công việc">Công việc</option><option value="Sức khỏe">Sức khỏe</option></select></label><label>Trạng thái<select id="taskStatus"><option value="todo">Chưa làm</option><option value="doing">Đang làm</option><option value="done">Đã xong</option></select></label></div><div class="modal-actions"><button type="button" class="secondary-button" id="cancelDialog">Hủy</button><button class="primary-button" type="submit">Lưu công việc</button></div></form></dialog>
-  <script src="app.js"></script>
+  <p>Đang mở Focus Tasks...</p>
+  <p><a href="todo-app/index.html">Mở ứng dụng Todo</a></p>
+  <script>window.location.replace('todo-app/index.html');</script>
 </body>
 </html>
